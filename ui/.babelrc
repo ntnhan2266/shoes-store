@@ -1,0 +1,44 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "useBuiltIns": "usage",
+        "debug": true,
+        "corejs": 3
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@modules": "./modules",
+          "@components": "./components",
+          "@layout": "./layout",
+          "@actions": "./actions",
+          "@actionTypes": "./actionTypes",
+          "@assets": "./assets",
+          "@store": "./store",
+          "@sagas": "./sagas",
+          "@sreducers": "./reducers",
+          "@dummy": "./dummy"
+        }
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "modules": false
+          }
+        ],
+        "next/babel"
+      ]
+    }
+  }
+}
