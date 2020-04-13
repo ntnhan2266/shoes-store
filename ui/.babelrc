@@ -18,7 +18,9 @@
           "@layout": "./layout",
           "@assets": "./assets",
           "@store": "./store",
-          "@dummy": "./dummy"
+          "@dummy": "./dummy",
+          "@configs": "./configs",
+          "@utils": "./utils"
         }
       }
     ]

@@ -35,6 +35,12 @@
       "@store/*": [
         "store/*"
       ],
+      "@configs/*": [
+        "configs/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
       "@dummy/*": [
         "__dummy__/*"
       ]
