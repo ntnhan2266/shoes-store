@@ -18,31 +18,16 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "./",
-    "typeRoots": ["types"],
+    "typeRoots": ["store/types"],
     "paths": {
       "@assets/*": [
         "assets/*"
-      ],
-      "@modules/*": [
-        "modules/*"
       ],
       "@components/*": [
         "components/*"
       ],
       "@layout/*": [
         "layout/*"
-      ],
-      "@actions/*": [
-        "actions/*"
-      ],
-      "@actionTypes/*": [
-        "actionTypes/*"
-      ],
-      "@reducers/*": [
-        "./reducers/*"
-      ],
-      "@sagas/*": [
-        "./sagas/*"
       ],
       "@public/*": [
         "public/*"

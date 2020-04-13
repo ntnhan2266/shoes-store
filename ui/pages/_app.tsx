@@ -1,11 +1,12 @@
 // eslint-disable jsx-props-no-spreading
-import App, { Container } from 'next/app';
+import App, { AppInitialProps } from 'next/app';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
+
 import makeStore from '@store/index';
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
+  static async getInitialProps({ Component, ctx }): Promise<AppInitialProps> {
     const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
     return { pageProps };
   }

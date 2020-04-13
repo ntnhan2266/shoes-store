@@ -1,8 +1,8 @@
 import { all } from 'redux-saga/effects';
-import newsSagas from '@sagas/news';
+import newsSagas from '@store/sagas/news';
 
 // combine all sagas
-export default function* rootSaga() {
+export default function* rootSaga(): Generator {
   yield all([
     ...newsSagas,
   ]);

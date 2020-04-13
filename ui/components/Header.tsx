@@ -1,43 +1,43 @@
 import React, { ReactElement } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 
-import { getNews } from '@actions/index';
-
+import { getNews } from '@store/actions/index';
 import * as css from '@assets/styles/home.module.scss';
+import { NewsActionTypes } from '@store/actionTypes/index';
+import { RootState } from '@store/reducers/index';
 
-interface RootState {
-  newsState: {
-    loading: boolean,
-    data: Array<any>
-  }
+interface DispatchProps {
+  fetchNews: () => NewsActionTypes;
 }
 
 const mapState = (state: RootState) => ({
   news: state.newsState.data,
-  loading: state.newsState.loading
+  loading: state.newsState.loading,
 });
 
 const mapDispatch = {
-  getNews,
+  fetchNews: getNews,
 };
 
 const connector = connect(mapState, mapDispatch);
 
-type PropsFromRedux = ConnectedProps<typeof connector>
+type PropsFromRedux = ConnectedProps<typeof connector>;
 
-type Props = PropsFromRedux & {
-}
+type Props = PropsFromRedux & DispatchProps;
 
-const Header: React.FC<Props> = (props: Props): ReactElement => (
-  <div>
-    {props.loading && <p>Loading</p>}
-    {!props.loading && <p>Load done</p>}
-    <button onClick={props.getNews}>Load data</button>
-    <ul>
-      {props.news.map(item => <li>{item.title}</li>)}
-    </ul>
-    <h1 className={css.home}>Header</h1>
-  </div>
-);
+const Header: React.FC<Props> = (props: Props): ReactElement => {
+  const { loading, news, fetchNews } = props;
+  return (
+    <div>
+      {loading && <p>Loading</p>}
+      {!loading && <p>Load done</p>}
+      <button type="button" onClick={fetchNews}>Load data</button>
+      <ul>
+        {news.map((item) => <li>{item.title}</li>)}
+      </ul>
+      <h1 className={css.home}>Header</h1>
+    </div>
+  );
+};
 
 export default connector(Header);

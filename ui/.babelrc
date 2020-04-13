@@ -14,15 +14,10 @@
       "module-resolver",
       {
         "alias": {
-          "@modules": "./modules",
           "@components": "./components",
           "@layout": "./layout",
-          "@actions": "./actions",
-          "@actionTypes": "./actionTypes",
           "@assets": "./assets",
           "@store": "./store",
-          "@sagas": "./sagas",
-          "@sreducers": "./reducers",
           "@dummy": "./dummy"
         }
       }
