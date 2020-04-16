@@ -11,8 +11,7 @@ module.exports = withPlugins([[withSass]], {
   /* config options here */
   cssModules: true,
   cssLoaderOptions: {
-    importLoaders: 1,
-    localIdentName: "[local]___[hash:base64:5]",
+    importLoaders: 2,
   },
   webpack(config, { buildId, dev, isServer, defaultLoaders, webpack }) {
     config.resolve.extensions = [".ts", ".tsx", ".js", ".css", ".scss"]
@@ -25,6 +24,33 @@ module.exports = withPlugins([[withSass]], {
         }
       }
     })
+
+    config.module.rules.forEach(rule => {
+      if (rule.test && rule.test.toString().includes('.scss')) {
+        rule.rules = rule.use.map(useRule => {
+          if (typeof useRule === 'string') {
+            return { loader: useRule };
+          }
+          if (useRule.loader === 'css-loader') {
+            return {
+              oneOf: [
+                {
+                  test: new RegExp('.global.scss$'),
+                  loader: useRule.loader,
+                  options: {},
+                },
+                {
+                  loader: useRule.loader,
+                  options: { modules: true }
+                },
+              ],
+            };
+          }
+          return useRule;
+        });
+        delete rule.use;
+      }
+    });
       
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//))
 
