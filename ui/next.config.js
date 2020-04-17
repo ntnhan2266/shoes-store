@@ -53,6 +53,11 @@ module.exports = withPlugins([[withSass]], {
     });
       
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//))
+    config.plugins.push(new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    }))
 
     Object.keys(tsPaths).forEach(function (key) {
       const newKey = key.replace('/*', '')
