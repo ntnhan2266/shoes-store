@@ -43,24 +43,25 @@ const Header: React.FC<Props> = (props: Props): ReactElement => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-end">
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span className="navbar-toggler-icon"></span>
-                </button>
+              <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-end-lg">
                 <Link href="/">
-                  <a className={`navbar-brand ${classes.siteName}`} href="">Dev4Fun</a>
+                  <a className={`navbar-brand ${classes.siteName}`} href="" title={t('homepage')}>Dev4Fun</a>
                 </Link>
-
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul className="navbar-nav justify-content-end flex-grow-1">
-                    <li className="nav-item align-item-center">
-                      <Icon className="gray-text fs-20 mx-8">search</Icon>
+                <div className="d-flex flex-grow-1 justify-content-end">
+                  <ul className="nav">
+                    <li className="nav-item align-item-center ml-16">
+                      <Icon className="gray-text fs-20 pointer" title={t('search')}>search</Icon>
                     </li>
-                    <li className="nav-item align-item-center">
-                      <Icon className="gray-text fs-20 mx-8">bookmarks</Icon>
+                    <li className="nav-item align-item-center ml-16">
+                      <Icon className="gray-text fs-20 pointer" title={t('bookmarks')}>bookmarks</Icon>
                     </li>
-                    <li className="nav-item align-item-center">
-                      <Icon className="gray-text fs-20 mx-8">notifications</Icon>
+                    <li className="nav-item align-item-center ml-16">
+                      <Icon className="gray-text fs-20 pointer" title={t('notifications')}>notifications</Icon>
+                    </li>
+                    <li className="nav-item align-item-center ml-16">
+                      <span title={t('profile')}>
+                        <img src="/images/account.jpg" alt="avatar" className="default-avatar"/>
+                      </span>
                     </li>
                   </ul>
                 </div>

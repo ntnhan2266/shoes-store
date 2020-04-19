@@ -15,7 +15,7 @@
       {
         "alias": {
           "@components": "./components",
-          "@layout": "./layout",
+          "@layouts": "./layouts",
           "@assets": "./assets",
           "@store": "./store",
           "@dummy": "./dummy",
