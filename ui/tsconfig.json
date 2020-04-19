@@ -26,8 +26,8 @@
       "@components/*": [
         "components/*"
       ],
-      "@layout/*": [
-        "layout/*"
+      "@layouts/*": [
+        "layouts/*"
       ],
       "@public/*": [
         "public/*"

@@ -1,3 +1,10 @@
 {
-  "welcome": "Chao"
+  "welcome": "Chao",
+  "homepage": "Trang chu",
+  "about_me_header": "Gioi thieu",
+  "about_me_short_info": "Doi dieu ve ban than",
+  "search": "Tim kiem",
+  "bookmarks": "Luu tru",
+  "notifications": "Thong bao",
+  "profile": "Ho so"
 }
