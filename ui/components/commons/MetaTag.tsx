@@ -17,7 +17,7 @@ const MetaTag: React.FC<Props> = (props: Props): React.ReactElement => {
     <Head>
       {/* <!-- COMMON TAGS --> */}
       <meta charSet="utf-8" />
-      <title>example</title>
+      <title>{configs.SITE_NAME}</title>
       {/* <!-- Search Engine --> */}
       <meta name="description" content={title} />
       <meta name="image" content={image} />

@@ -9,6 +9,7 @@ import * as classes from '@assets/styles/components/header.module.scss';
 import { getNews } from '@store/actions/index';
 import { NewsActionTypes } from '@store/actionTypes/index';
 import { RootState } from '@store/reducers/index';
+import RegisterBar from '@components/commons/RegisterBar';
 
 interface DispatchProps {
   fetchNews: () => NewsActionTypes;
@@ -40,32 +41,10 @@ const Header: React.FC<Props> = (props: Props): ReactElement => {
   return (
     <header>
       <div className={classes.headerWrapper}>
+        <RegisterBar />
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-end-lg">
-                <Link href="/">
-                  <a className={`navbar-brand ${classes.siteName}`} href="" title={t('homepage')}>Dev4Fun</a>
-                </Link>
-                <div className="d-flex flex-grow-1 justify-content-end">
-                  <ul className="nav">
-                    <li className="nav-item align-item-center ml-16">
-                      <Icon className="gray-text fs-20 pointer" title={t('search')}>search</Icon>
-                    </li>
-                    <li className="nav-item align-item-center ml-16">
-                      <Icon className="gray-text fs-20 pointer" title={t('bookmarks')}>bookmarks</Icon>
-                    </li>
-                    <li className="nav-item align-item-center ml-16">
-                      <Icon className="gray-text fs-20 pointer" title={t('notifications')}>notifications</Icon>
-                    </li>
-                    <li className="nav-item align-item-center ml-16">
-                      <span title={t('profile')}>
-                        <img src="/images/account.jpg" alt="avatar" className="default-avatar"/>
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
             </div>
           </div>
         </div>

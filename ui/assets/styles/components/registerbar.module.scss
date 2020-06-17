@@ -1,0 +1,24 @@
+.registerbar {
+  background-color: #f2f2f2;
+  padding: 12px 0;
+
+  .navigatebar {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .link {
+    color: #000;
+    font-size: 14px;
+    padding: 0 16px;
+    border-right: 1px solid gray;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover {
+      color: gray;
+    }
+  }
+}

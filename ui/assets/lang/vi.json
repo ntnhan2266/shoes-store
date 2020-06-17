@@ -3,8 +3,8 @@
   "homepage": "Trang chu",
   "about_me_header": "Gioi thieu",
   "about_me_short_info": "Doi dieu ve ban than",
-  "search": "Tim kiem",
-  "bookmarks": "Luu tru",
-  "notifications": "Thong bao",
-  "profile": "Ho so"
+  "register": "Đăng ký",
+  "login": "Đăng nhập",
+  "register_receive_mail": "Dang ky nhan tin",
+  "your_email": "Email cua ban"
 }

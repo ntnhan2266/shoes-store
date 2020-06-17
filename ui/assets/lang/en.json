@@ -1,5 +1,9 @@
 {
   "welcome": "Chao",
   "about_me_header": "About me",
-  "about_me_short_info": ""
+  "about_me_short_info": "",
+  "register": "Register",
+  "login": "Login",
+  "register_receive_mail": "Register to receive mail",
+  "your_email": "Your email"
 }
